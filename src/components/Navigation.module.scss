@@ -1,0 +1,40 @@
+$colorDarkGray: #e3e3e3;
+$colorWhite: #ededed;
+$colorMain: #ee7a09;
+$colorBlackTransparent: rgba(0, 0, 0, 0.7);
+
+.navigaton {
+}
+
+.navigationList {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $colorWhite;
+}
+
+.navigationOverlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: -100%;
+  right: 0;
+  bottom: 0;
+  background: $colorBlackTransparent;
+  transition: all 0.25s ease-out;
+
+  &.isOpen {
+    top: 0;
+  }
+}
+
+.menuButton {
+  position: relative;
+  z-index: 500;
+  &.isActive {
+    color: $colorMain;
+  }
+}

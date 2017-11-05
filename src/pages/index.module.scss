@@ -1,0 +1,22 @@
+$colorDarkGray: #e3e3e3;
+$colorWhite: #ededed;
+$colorMain: #ee7a09;
+$colorBlackTransparent: rgba(0, 0, 0, 0.7);
+
+.headerImage {
+  margin-top: 0rem;
+}
+
+.mainHeadline {
+  text-align: center;
+  padding: 4rem 0 6rem 0;
+
+  h3 {
+    max-width: 20em;
+    margin: 0 auto;
+  }
+}
+
+.highlight {
+  color: $colorMain;
+}

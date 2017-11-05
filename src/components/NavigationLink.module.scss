@@ -1,0 +1,14 @@
+$colorDarkGray: #e3e3e3;
+$colorWhite: #ededed;
+$colorMain: #ee7a09;
+$colorBlackTransparent: rgba(0, 0, 0, 0.7);
+
+.navigationLink {
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+  &:hover,
+  &.isActive {
+    color: $colorMain;
+  }
+}

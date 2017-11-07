@@ -4,20 +4,40 @@ import Link from 'gatsby-link';
 import classNames from 'classnames';
 
 import style from './index.module.scss';
-import headerImage from './index/dieci.jpg';
+import headerImage from '../img/index/home-5.jpg';
+
+var headerAreaStyle = {
+  background: 'url(' + headerImage + ')',
+  backgroundSize: 'cover'
+};
+
+var svgStyle = {
+  width: '100%',
+  height: '100%'
+};
+
+var lineStyle = {
+  stroke: 'rgba(255, 255, 255, 0.2)',
+  strokeWidth: '150'
+};
 
 const Index = ({ transition }) => (
   <div style={transition && transition.style}>
-    <div className={style.mainHeadline}>
-      <h1>
-        Design meets <span className={style.highlight}>Development</span>
-      </h1>
-      <h3>
-        I am here to <span className={style.highlight}>link</span> the mindeset
-        of a designer and the mindset of a developer.
-      </h3>
+    <div className={style.headerArea} style={headerAreaStyle}>
+      <div className={style.headerOverlay} />
+      <div className={style.headerContent}>
+        <div className={style.mainHeadline}>
+          <h1>
+            <span className={style.complementary}>Design</span> meets{' '}
+            <span className={style.highlight}>Code</span>
+          </h1>
+          <p>
+            I am here to combine the know-how of a designer and the know-how of
+            a developer.
+          </p>
+        </div>
+      </div>
     </div>
-    <img src={headerImage} className={style.headerImage} />
     <div>
       <Link to="/cat/">Go to cat</Link>
     </div>

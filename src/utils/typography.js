@@ -1,11 +1,24 @@
 import Typography from 'typography';
-import lawtonTheme from 'typography-theme-lawton';
 
-lawtonTheme.baseFontSize = '24px';
-lawtonTheme.scaleRatio = 3;
-lawtonTheme.headerFontFamily = ['Helvetica Neue', 'Segoe UI'];
-lawtonTheme.headerWeight = '100';
-lawtonTheme.bodyFontFamily = ['Lato', 'sans-serif'];
+const typography = new Typography({
+  baseFontSize: '30px',
+  scaleRatio: 3.5,
+  baseLineHeight: 1.666,
+  googleFonts: [
+    {
+      name: 'Lato',
+      styles: ['100', '300', '500', '900']
+    },
+    {
+      name: 'Work Sans',
+      styles: ['100', '300', '500', '900']
+    }
+  ],
+  headerFontFamily: ['Work Sans', 'sans-serif'],
+  headerWeight: '900',
+  bodyFontFamily: ['Lato', 'sans-serif'],
+  bodyWeight: '300'
+  // See below for the full list of options.
+});
 
-const typography = new Typography(lawtonTheme);
 export default typography;

@@ -1,0 +1,37 @@
+$colorDarkGray: #e3e3e3;
+$colorWhite: #ededed;
+$colorMain: #ee7a09;
+$colorMainDark: #3f2002;
+$colorComplementary: #044d63;
+$colorBlackTransparent: rgba(0, 0, 0, 0.7);
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 4rem;
+  width: 100%;
+  text-align: center;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.isFixed {
+    position: fixed;
+    padding-top: 0rem;
+  }
+}
+
+.navigation {
+  position: absolute;
+  left: 4rem;
+  font-size: 2rem;
+}
+
+.logo {
+  width: 300px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0);
+}

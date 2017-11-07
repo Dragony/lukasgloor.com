@@ -5,8 +5,6 @@ import style from './MenuButton.module.scss';
 class MenuButton extends React.Component {
   constructor(props) {
     super(props);
-
-    console.log('here', this.props.isActive);
   }
 
   handleClick() {
@@ -28,7 +26,7 @@ class MenuButton extends React.Component {
                 id="navicon"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="14"
+                strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >

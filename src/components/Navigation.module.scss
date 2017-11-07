@@ -34,6 +34,7 @@ $colorBlackTransparent: rgba(0, 0, 0, 0.7);
 .menuButton {
   position: relative;
   z-index: 500;
+  color: $colorWhite;
   &.isActive {
     color: $colorMain;
   }

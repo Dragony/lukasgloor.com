@@ -20,7 +20,7 @@ class NavigationLink extends React.Component {
   render() {
     return (
       <li onClick={this.handleNavigationClick} className={style.navigationLink}>
-        {this.props.name}
+        <h3>{this.props.name}</h3>
       </li>
     );
   }

@@ -2,26 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-
-import Navigation from '../components/Navigation.js';
-
-import logo from '../img/lukas_gloor_logo.svg';
+import Header from '../components/Header.js';
 
 import style from './index.module.scss';
 
 import './index.scss';
-
-const Header = () => (
-  <div className={style.header}>
-    <div className={style.navigation}>
-      <Navigation />
-    </div>
-    <Link to="/">
-      <img src={logo} className={style.logo} />
-    </Link>
-    <div />
-  </div>
-);
 
 const Footer = () => (
   <div className={style.footer}>
@@ -39,15 +24,21 @@ const Footer = () => (
 const TemplateWrapper = ({ children }) => (
   <div className={style.wrapper}>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Lukas Gloor - User Expirience Engineer"
       meta={[
-        { name: `description`, content: `Sample` },
-        { name: `keywords`, content: `sample, something` }
+        {
+          name: `description`,
+          content: `Personal protfolio website of Lukas Gloor. User Expirience Engineer.`
+        },
+        {
+          name: `keywords`,
+          content: `User Expirience, Web Development, Engineer`
+        }
       ]}
     />
     <Header />
     <div className={style.content}>{children()}</div>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 

@@ -1,3 +1,6 @@
+$maxWidth: 42em;
+$maxWidthText: 26em;
+
 html {
   box-sizing: border-box;
 }
@@ -5,4 +8,10 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+p {
+  max-width: $maxWidthText;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -33,7 +33,6 @@ class Navigation extends React.Component {
   }
 
   render() {
-    console.log(this.state.isActive);
     return (
       <div className={style.navigation}>
         <div

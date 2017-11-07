@@ -8,11 +8,7 @@ $colorBlackTransparent: rgba(0, 0, 0, 0.7);
   align-items: center;
   overflow: visible;
   cursor: pointer;
-  webkittaphighlightcolor: 'rgba(0,0,0,0)';
-
-  &.isActive {
-    color: $colorMain;
-  }
+  webkittaphighlightcolor: $colorWhite;
 
   & span {
     font-size: 1.2rem;

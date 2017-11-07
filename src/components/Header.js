@@ -9,21 +9,28 @@ import Navigation from './Navigation.js';
 
 import style from './Header.module.scss';
 
-import logo from '../img/lukas_gloor_logo_white.svg';
+import logoWhite from '../img/lukas_gloor_logo_white.svg';
+import logoDark from '../img/lukas_gloor_logo.svg';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isFixed: false
+      isFixed: false,
+      isDarkComponent: this.props.isDarkComponent,
+      testcase: true
     };
-
     this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    this.setState(nextProps);
   }
 
   handleScroll() {
@@ -44,15 +51,15 @@ class Header extends React.Component {
           [style.header]: true,
           [style.isFixed]: this.state.isFixed
         })}
-        ref={element => {
-          this.headerElement = element;
-        }}
       >
         <div className={style.navigation}>
           <Navigation />
         </div>
         <Link to="/">
-          <img src={logo} className={style.logo} />
+          <img
+            src={this.state.isDarkComponent ? logoWhite : logoDark}
+            className={style.logo}
+          />
         </Link>
         <div />
       </div>

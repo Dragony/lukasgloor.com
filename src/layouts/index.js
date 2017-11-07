@@ -21,26 +21,49 @@ const Footer = () => (
   </div>
 );
 
-const TemplateWrapper = ({ children }) => (
-  <div className={style.wrapper}>
-    <Helmet
-      title="Lukas Gloor - User Expirience Engineer"
-      meta={[
-        {
-          name: `description`,
-          content: `Personal protfolio website of Lukas Gloor. User Expirience Engineer.`
-        },
-        {
-          name: `keywords`,
-          content: `User Expirience, Web Development, Engineer`
-        }
-      ]}
-    />
-    <Header />
-    <div className={style.content}>{children()}</div>
-    {/* <Footer /> */}
-  </div>
-);
+class TemplateWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isDarkComponent: true
+    };
+
+    this.hanldeLogoChange = this.hanldeLogoChange.bind(this);
+  }
+
+  hanldeLogoChange(payload) {
+    console.log('handle change now');
+    this.setState({ isDarkComponent: payload });
+  }
+
+  render() {
+    const updateLayoutFunction = this.hanldeLogoChange;
+
+    return (
+      <div className={style.wrapper}>
+        <Helmet
+          title="Lukas Gloor - User Expirience Engineer"
+          meta={[
+            {
+              name: `description`,
+              content: `Personal protfolio website of Lukas Gloor. User Expirience Engineer.`
+            },
+            {
+              name: `keywords`,
+              content: `User Expirience, Web Development, Engineer`
+            }
+          ]}
+        />
+        <Header isDarkComponent={this.state.isDarkComponent} />
+        <div className={style.content}>
+          {this.props.children({ ...this.props, updateLayoutFunction })}
+        </div>
+        {/* <Footer /> */}
+      </div>
+    );
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func

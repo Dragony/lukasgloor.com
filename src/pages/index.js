@@ -3,6 +3,8 @@ import React from 'react';
 import Link from 'gatsby-link';
 import classNames from 'classnames';
 
+import ContentContainer from '../components/ContentContainer';
+
 import style from './index.module.scss';
 import headerImage from '../img/index/home-5.jpg';
 
@@ -21,30 +23,49 @@ var lineStyle = {
   strokeWidth: '150'
 };
 
-const Index = ({ transition }) => (
-  <div style={transition && transition.style}>
-    <div className={style.headerArea} style={headerAreaStyle}>
-      <div className={style.headerOverlay} />
-      <div className={style.headerContent}>
-        <div className={style.mainHeadline}>
-          <h1>
-            <span className={style.complementary}>Design</span> meets{' '}
-            <span className={style.highlight}>Code</span>
-          </h1>
-          <p>
-            I am here to combine the know-how of a designer and the know-how of
-            a developer.
-          </p>
+class Index extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleLogoChange = this.handleLogoChange.bind(this);
+  }
+
+  handleLogoChange(payload) {
+    this.props.updateLayoutFunction(payload);
+  }
+
+  render() {
+    return (
+      <div style={this.props.transition && this.props.transition.style}>
+        <div className={style.headerArea} style={headerAreaStyle}>
+          <div className={style.headerOverlay} />
+          <div className={style.headerContent}>
+            <div className={style.mainHeadline}>
+              <h1>
+                <span className={style.complementary}>Design</span> meets{' '}
+                <span className={style.highlight}>Code</span>
+              </h1>
+              <p>
+                I am here to combine the know-how of a designer and the know-how
+                of a developer.
+              </p>
+            </div>
+          </div>
         </div>
+        <div>
+          <Link to="/cat/">Go to cat</Link>
+        </div>
+        <div>
+          <Link to="/dog/">Go to dog</Link>
+        </div>
+        <ContentContainer
+          isDarkComponent={false}
+          componentContent="hallo Welt."
+          handleLogoChange={this.handleLogoChange}
+        />
       </div>
-    </div>
-    <div>
-      <Link to="/cat/">Go to cat</Link>
-    </div>
-    <div>
-      <Link to="/dog/">Go to dog</Link>
-    </div>
-  </div>
-);
+    );
+  }
+}
 
 export default Index;

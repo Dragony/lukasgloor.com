@@ -11,6 +11,7 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^1.0.12",
     "gatsby-plugin-typography": "^1.7.10",
+    "lodash": "^4.17.4",
     "postcss-icss-values": "^2.0.1",
     "postcss-loader": "^2.0.8",
     "react-motion": "^0.5.2",

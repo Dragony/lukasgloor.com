@@ -9,7 +9,7 @@ $colorBlackTransparent: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: 4rem;
+  padding-top: 3rem;
   width: 100%;
   text-align: center;
   z-index: 200;
@@ -29,9 +29,40 @@ $colorBlackTransparent: rgba(0, 0, 0, 0.7);
   font-size: 2rem;
 }
 
-.logo {
+.logoLink {
+  padding: 1rem 0;
+}
+
+.logoContainer {
   width: 300px;
+  position: relative;
+}
+
+.logoLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
   margin: 0 auto;
-  padding: 0.5rem;
+  padding-right: 0.2rem;
   background: rgba(255, 255, 255, 0);
+  opacity: 0;
+  transition: all 0.25s;
+
+  &.isVisible {
+    opacity: 1;
+  }
+}
+
+.logoRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 150px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0);
+}
+
+.logoSpacer {
+  height: 36px;
 }

@@ -9,8 +9,9 @@ import Navigation from './Navigation.js';
 
 import style from './Header.module.scss';
 
-import logoWhite from '../img/lukas_gloor_logo_white.svg';
-import logoDark from '../img/lukas_gloor_logo.svg';
+import logoWhite from '../img/lukas_logo_white.svg';
+import logoDark from '../img/lukas_logo.svg';
+import logoGloor from '../img/gloor_logo.svg';
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,8 +19,7 @@ class Header extends React.Component {
 
     this.state = {
       isFixed: false,
-      isDarkComponent: this.props.isDarkComponent,
-      testcase: true
+      isDarkComponent: this.props.isDarkComponent
     };
     this.handleScroll = this.handleScroll.bind(this);
   }
@@ -55,11 +55,25 @@ class Header extends React.Component {
         <div className={style.navigation}>
           <Navigation />
         </div>
-        <Link to="/">
-          <img
-            src={this.state.isDarkComponent ? logoWhite : logoDark}
-            className={style.logo}
-          />
+        <Link to="/" className={style.logoLink}>
+          <div className={style.logoContainer}>
+            <div className={style.logoSpacer} />
+            <img
+              src={logoWhite}
+              className={classNames({
+                [style.logoLeft]: true,
+                [style.isVisible]: this.state.isDarkComponent
+              })}
+            />
+            <img
+              src={logoDark}
+              className={classNames({
+                [style.logoLeft]: true,
+                [style.isVisible]: !this.state.isDarkComponent
+              })}
+            />
+            <img src={logoGloor} className={style.logoRight} />
+          </div>
         </Link>
         <div />
       </div>

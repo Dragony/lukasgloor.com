@@ -16,7 +16,7 @@ class ContentContainer extends React.Component {
       isDarkComponent: this.props.isDarkComponent
     };
 
-    this.handleScroll = _.debounce(this.handleScroll, 250);
+    this.handleScroll = _.throttle(this.handleScroll, 500);
 
     this.handleScroll = this.handleScroll.bind(this);
   }

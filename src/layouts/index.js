@@ -39,7 +39,12 @@ class TemplateWrapper extends React.Component {
 
   render() {
     const updateLayoutFunction = this.hanldeLogoChange;
-
+    const childrenWithProps = React.Children.map(this.props.children,
+     (child) => React.cloneElement(child, {
+       updateLayoutFunction
+     })
+    );
+    
     return (
       <div className={style.wrapper}>
         <Helmet
@@ -57,7 +62,7 @@ class TemplateWrapper extends React.Component {
         />
         <Header isDarkComponent={this.state.isDarkComponent} />
         <div className={style.content}>
-          {this.props.children({ ...this.props, updateLayoutFunction })}
+          {childrenWithProps}
         </div>
         {/* <Footer /> */}
       </div>
